@@ -1,0 +1,469 @@
+/* ==========================================
+   1. CONFIGURAÇÕES GERAIS E RESET
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-color: #0f0f0f;
+    color: #fff;
+    overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+}
+
+/* ==========================================
+   2. NAVBAR (HEADER)
+   ========================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #1a1512; /* Fundo escuro fluido country/piseiro */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid #d4af37; /* Linha dourada de acabamento */
+}
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+.nav-links a {
+    color: #f5e6d3;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+.nav-links a:hover {
+    color: #1DB954; /* Destaque verde Spotify no menu */
+}
+.spotify-btn-header {
+    background-color: #1DB954;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+.spotify-btn-header:hover {
+    background-color: #1ed760;
+}
+
+/* ==========================================
+   3. CAPA (HERO SECTION COM FOTO rita.jpg)
+   ========================================== */
+.hero-section {
+    position: relative;
+    height: 70vh;
+    background-image: url('rita.jpg'); /* Sua foto de fundo */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.65); /* Escurece a foto de fundo para destacar o texto */
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+.hero-content h1 {
+    font-size: 2.8rem;
+    color: #d4af37; /* Letras em dourado */
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+.hero-content p {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    margin-bottom: 35px;
+}
+
+/* Botão Verde 3D Pulsando */
+.spotify-btn-pulsing {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(180deg, #1ed760 0%, #1db954 100%);
+    color: white;
+    padding: 18px 35px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    box-shadow: 0 8px 0 #15803d, 0 12px 20px rgba(29, 185, 84, 0.4);
+    transition: 0.2s;
+    animation: pulse 1.5s infinite;
+}
+.spotify-btn-pulsing:active {
+    box-shadow: 0 2px 0 #15803d, 0 4px 10px rgba(29, 185, 84, 0.4);
+    transform: translateY(6px);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+    100% { transform: scale(1); }
+}
+
+/* ==========================================
+   4. SEÇÃO DO E-BOOK (CALL TO ACTION)
+   ========================================== */
+.ebook-section {
+    padding: 60px 5%;
+    background-color: #141414;
+}
+.ebook-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: center;
+    gap: 50px;
+}
+.ebook-image {
+    flex: 1;
+    text-align: center;
+}
+.ebook-image img {
+    max-width: 320px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+.ebook-text {
+    flex: 1;
+}
+.ebook-text h2 {
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 20px;
+    border-left: 4px solid #d4af37;
+    padding-left: 15px;
+}
+.ebook-text p {
+    font-size: 1.1rem;
+    color: #aaa;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+.btn-buy-ebook {
+    display: inline-block;
+    background-color: #f5a623;
+    color: #000;
+    padding: 15px 30px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(245, 166, 35, 0.3);
+    transition: 0.3s;
+}
+.btn-buy-ebook:hover {
+    background-color: #ffb842;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   5. SEÇÃO MÚSICAS (5 CAPAS)
+   ========================================== */
+.musicas-section {
+    padding: 60px 5%;
+    background-color: #0f0f0f;
+}
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #d4af37;
+    margin-bottom: 40px;
+}
+.grid-musicas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.card-musica {
+    background-color: #1a1a1a;
+    width: 200px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border: 1px solid #222;
+}
+.card-musica img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+.card-musica h3 {
+    font-size: 1rem;
+    color: #fff;
+}
+.cta-musicas-container {
+    text-align: center;
+    margin-top: 45px;
+}
+.btn-ouca-agora {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #1DB954;
+    color: white;
+    padding: 16px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(29, 185, 84, 0.4);
+    transition: 0.3s;
+}
+.btn-ouca-agora:hover {
+    background-color: #1ed760;
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   6. SEÇÃO ROUBE O LOOK
+   ========================================== */
+.looks-section {
+    padding: 60px 5%;
+    background-color: #fcf9f5; /* Tom bege claro idêntico à amostra */
+    color: #333;
+}
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+.looks-container {
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 40px;
+    align-items: center;
+}
+
+/* Lado esquerdo - Imagem Interativa com Botões */
+.look-interactive {
+    flex: 1;
+    position: relative;
+    text-align: center;
+}
+.rita-main-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 550px;
+}
+
+/* Estilo das Tags Verdes "ORDER NOW" */
+.look-tag {
+    position: absolute;
+    background-color: #52b788; /* Verde da imagem de referência */
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transition: 0.2s;
+}
+.look-tag:hover {
+    background-color: #409a71;
+    transform: scale(1.05);
+}
+
+/* Posicionamentos estratégicos simulando as setas */
+.tag-chapeu { top: 18%; left: 5%; }
+.tag-cropped { top: 25%; right: 5%; }
+.tag-shorts { top: 50%; left: 2%; }
+.tag-botas { top: 68%; right: 8%; }
+
+/* Lado Direito - Grid de 4 Produtos */
+.looks-grid-produtos {
+    flex: 1.2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.produto-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid #eaeaea;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.produto-card img {
+    width: 100%;
+    max-width: 160px;
+    height: 160px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+.produto-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Botões de Conversão da Amostra (Laranja e Preto) */
+.btn-shopee {
+    background-color: #e25c38; /* Laranja Oficial */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+.btn-shopee:hover { background-color: #cc4f2e; }
+
+.btn-tiktok {
+    background-color: #000000; /* Preto TikTok Shop */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 1px solid #222;
+    transition: 0.2s;
+}
+.btn-tiktok:hover { background-color: #222; }
+
+/* Lista inferior de texto */
+.looks-list-footer {
+    max-width: 1100px;
+    margin: 30px auto 0 auto;
+    padding-left: 20px;
+}
+.looks-list-footer p {
+    font-size: 1.05rem;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+/* ==========================================
+   7. FOOTER (RODAPÉ)
+   ========================================== */
+.site-footer {
+    background-color: #1a1512; /* Mesmo fundo escuro do Header */
+    padding: 40px 5%;
+    border-top: 2px solid #d4af37; /* Mesma linha dourada */
+    color: #f5e6d3;
+}
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer-logo p {
+    font-size: 0.85rem;
+    color: #aaa;
+    letter-spacing: 0.5px;
+}
+.footer-nav {
+    display: flex;
+    gap: 30px;
+}
+.footer-nav a {
+    color: #f5e6d3;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+.footer-nav a:hover {
+    color: #1DB954;
+}
+.footer-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+.social-icon {
+    color: #f5e6d3;
+    font-size: 1.3rem;
+    transition: 0.3s;
+}
+.social-icon:hover {
+    color: #1DB954;
+    transform: translateY(-3px);
+}
+.copyright {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* ==========================================
+   8. RESPONSIVIDADE (MOBILE / CELULARES)
+   ========================================== */
+@media (max-width: 768px) {
+    /* Navbar Mobile */
+    .navbar { flex-direction: column; gap: 15px; text-align: center; }
+    
+    /* Capa Mobile */
+    .hero-content h1 { font-size: 2rem; }
+    
+    /* Ebook Mobile */
+    .ebook-container { flex-direction: column; text-align: center; }
+    .ebook-text h2 { border-left: none; padding-left: 0; }
+    
+    /* Músicas Mobile */
+    .grid-musicas { gap: 15px; }
+    .card-musica { width: 45%; }
+    
+    /* Looks Mobile */
+    .looks-container { flex-direction: column; }
+    .looks-grid-produtos { grid-template-columns: 1fr; }
+    .look-tag { display: none; } /* Esconde as tags flutuantes para não quebrar a tela do celular */
+    
+    /* Footer Mobile */
+    .footer-container { flex-direction: column; text-align: center; }
+    .footer-logo { align-items: center; }
+    .footer-nav { flex-direction: column; gap: 15px; }
+    .footer-socials { align-items: center; }
+}
