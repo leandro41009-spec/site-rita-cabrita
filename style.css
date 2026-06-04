@@ -14,6 +14,67 @@ body {
     color: #ffffff;
 }
 
+/* BOTÕES 3D */
+@keyframes pulseGlowGreen {
+    0% {
+        transform: translateY(0);
+        box-shadow: 0 8px 0 #2f7f29, 0 14px 28px rgba(89, 193, 77, 0.28);
+    }
+    50% {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 0 #2f7f29, 0 20px 34px rgba(89, 193, 77, 0.42);
+    }
+    100% {
+        transform: translateY(0);
+        box-shadow: 0 8px 0 #2f7f29, 0 14px 28px rgba(89, 193, 77, 0.28);
+    }
+}
+
+@keyframes pulseGlowGold {
+    0% {
+        transform: translateY(0);
+        box-shadow: 0 8px 0 #9c7722, 0 14px 28px rgba(216, 175, 68, 0.28);
+    }
+    50% {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 0 #9c7722, 0 20px 34px rgba(216, 175, 68, 0.42);
+    }
+    100% {
+        transform: translateY(0);
+        box-shadow: 0 8px 0 #9c7722, 0 14px 28px rgba(216, 175, 68, 0.28);
+    }
+}
+
+.btn-3d {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 999px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    position: relative;
+}
+
+.btn-3d:hover {
+    filter: brightness(1.04);
+}
+
+.btn-green {
+    background: linear-gradient(180deg, #71df65 0%, #4fbe46 100%);
+    color: #ffffff;
+    box-shadow: 0 8px 0 #2f7f29, 0 14px 28px rgba(89, 193, 77, 0.28);
+    animation: pulseGlowGreen 2.1s infinite ease-in-out;
+}
+
+.btn-gold {
+    background: linear-gradient(180deg, #f0c957 0%, #d8af44 100%);
+    color: #111111;
+    box-shadow: 0 8px 0 #9c7722, 0 14px 28px rgba(216, 175, 68, 0.28);
+    animation: pulseGlowGold 2.1s infinite ease-in-out;
+}
+
 /* HEADER */
 .navbar {
     background: #1f1813;
@@ -66,21 +127,9 @@ body {
 }
 
 .spotify-btn-header {
-    background: #59c14d;
-    color: #ffffff;
-    text-decoration: none;
     padding: 12px 24px;
-    border-radius: 999px;
-    font-weight: 700;
     font-size: 16px;
-    transition: all 0.25s ease;
-    box-shadow: 0 6px 18px rgba(89, 193, 77, 0.25);
     white-space: nowrap;
-}
-
-.spotify-btn-header:hover {
-    background: #49ae3f;
-    transform: translateY(-2px);
 }
 
 /* HERO */
@@ -123,15 +172,8 @@ body {
 }
 
 .spotify-btn-pulsing {
-    display: inline-block;
-    background: linear-gradient(180deg, #6be35f 0%, #50c447 100%);
-    color: #fff;
-    text-decoration: none;
     padding: 18px 34px;
-    border-radius: 999px;
     font-size: 20px;
-    font-weight: 800;
-    box-shadow: 0 10px 25px rgba(107, 227, 95, 0.35);
 }
 
 /* TÍTULOS */
@@ -185,13 +227,7 @@ body {
 }
 
 .btn-buy-ebook {
-    display: inline-block;
-    background: #d8af44;
-    color: #111;
-    text-decoration: none;
     padding: 16px 28px;
-    border-radius: 999px;
-    font-weight: 800;
 }
 
 /* MÚSICAS */
@@ -200,9 +236,12 @@ body {
     padding: 80px 20px;
 }
 
-.grid-musicas {
+.musicas-carousel-wrap {
     max-width: 1200px;
     margin: 40px auto 0;
+}
+
+.grid-musicas {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 22px;
@@ -246,7 +285,7 @@ body {
     width: 66px;
     height: 66px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.94);
     color: #111111;
     display: flex;
     align-items: center;
@@ -261,13 +300,7 @@ body {
 }
 
 .btn-ouca-agora {
-    display: inline-block;
-    background: #d8af44;
-    color: #111;
-    text-decoration: none;
     padding: 16px 30px;
-    border-radius: 999px;
-    font-weight: 800;
 }
 
 /* LOOKS */
@@ -469,6 +502,7 @@ body {
         max-width: 260px;
         text-align: center;
         font-size: 15px;
+        padding: 12px 20px;
     }
 
     .section-title {
@@ -491,14 +525,31 @@ body {
         font-size: 18px;
     }
 
-    .spotify-btn-pulsing {
+    .spotify-btn-pulsing,
+    .btn-ouca-agora,
+    .btn-buy-ebook {
         font-size: 16px;
-        padding: 16px 24px;
+        padding: 15px 22px;
+    }
+
+    .musicas-carousel-wrap {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        padding-bottom: 8px;
     }
 
     .grid-musicas {
-        grid-template-columns: 1fr;
-        max-width: 330px;
+        display: flex;
+        gap: 16px;
+        width: max-content;
+        padding: 0 4px;
+    }
+
+    .card-musica {
+        flex: 0 0 220px;
+        width: 220px;
     }
 
     .play-overlay i {
@@ -536,6 +587,11 @@ body {
         font-size: 11px;
         padding: 7px 10px;
         max-width: 44%;
+    }
+
+    .card-musica {
+        flex: 0 0 190px;
+        width: 190px;
     }
 
     .play-overlay i {
