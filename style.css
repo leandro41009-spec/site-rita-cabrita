@@ -338,18 +338,19 @@ a {
 .looks-track {
     display: flex;
     gap: 28px;
-    width: max-content;
     align-items: flex-start;
 }
 
 .look-slide {
+    flex: 0 0 760px;
     width: 760px;
-    min-width: 760px;
 }
 
 .look-novo-imagem {
     position: relative;
-    width: 100%;
+    width: 760px;
+    max-width: 760px;
+    margin: 0;
     border-radius: 28px;
     overflow: hidden;
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
@@ -430,34 +431,39 @@ a {
     line-height: 1.1;
 }
 
-/* POSIÇÕES LOOK 22 */
-.bubble-dress {
-    top: 31%;
+/* LOOK 22 */
+.look-slide:nth-child(1) .bubble-hat {
+    top: 8%;
+    right: 4%;
+}
+
+.look-slide:nth-child(1) .bubble-dress {
+    top: 32%;
     right: 3%;
 }
 
-.bubble-boot-left {
-    bottom: 10%;
+.look-slide:nth-child(1) .bubble-boot-left {
+    bottom: 8%;
     left: 3%;
 }
 
-/* POSIÇÕES GERAIS / LOOK 23 */
-.bubble-hat {
+/* LOOK 23 */
+.look-slide:nth-child(2) .bubble-hat {
     top: 9%;
     right: 4%;
 }
 
-.bubble-shirt {
+.look-slide:nth-child(2) .bubble-shirt {
     top: 30%;
     left: 2%;
 }
 
-.bubble-skirt {
+.look-slide:nth-child(2) .bubble-skirt {
     top: 50%;
     right: 2%;
 }
 
-.bubble-boot {
+.look-slide:nth-child(2) .bubble-boot {
     bottom: 8%;
     right: 2%;
 }
@@ -544,8 +550,13 @@ a {
     }
 
     .look-slide {
+        flex: 0 0 640px;
         width: 640px;
-        min-width: 640px;
+    }
+
+    .look-novo-imagem {
+        width: 640px;
+        max-width: 640px;
     }
 
     .look-bubble {
@@ -650,8 +661,13 @@ a {
     }
 
     .look-slide {
+        flex: 0 0 92vw;
         width: 92vw;
-        min-width: 92vw;
+    }
+
+    .look-novo-imagem {
+        width: 92vw;
+        max-width: 92vw;
     }
 
     .look-bubble {
@@ -669,34 +685,39 @@ a {
         font-size: 10px;
     }
 
-    .bubble-hat {
+    .look-slide:nth-child(1) .bubble-hat {
         top: 8%;
         right: 3%;
     }
 
-    .bubble-dress {
-        top: 30%;
+    .look-slide:nth-child(1) .bubble-dress {
+        top: 31%;
         right: 2%;
     }
 
-    .bubble-shirt {
+    .look-slide:nth-child(1) .bubble-boot-left {
+        bottom: 8%;
+        left: 2%;
+    }
+
+    .look-slide:nth-child(2) .bubble-hat {
+        top: 8%;
+        right: 3%;
+    }
+
+    .look-slide:nth-child(2) .bubble-shirt {
         top: 30%;
         left: 2%;
     }
 
-    .bubble-skirt {
+    .look-slide:nth-child(2) .bubble-skirt {
         top: 51%;
         right: 2%;
     }
 
-    .bubble-boot {
+    .look-slide:nth-child(2) .bubble-boot {
         bottom: 7%;
         right: 2%;
-    }
-
-    .bubble-boot-left {
-        bottom: 8%;
-        left: 2%;
     }
 }
 
@@ -726,33 +747,38 @@ a {
         font-size: 9px;
     }
 
-    .bubble-hat {
+    .look-slide:nth-child(1) .bubble-hat {
         top: 8%;
         right: 2%;
     }
 
-    .bubble-dress {
-        top: 29%;
+    .look-slide:nth-child(1) .bubble-dress {
+        top: 30%;
         right: 2%;
     }
 
-    .bubble-shirt {
+    .look-slide:nth-child(1) .bubble-boot-left {
+        bottom: 7%;
+        left: 1.5%;
+    }
+
+    .look-slide:nth-child(2) .bubble-hat {
+        top: 8%;
+        right: 2%;
+    }
+
+    .look-slide:nth-child(2) .bubble-shirt {
         top: 29%;
         left: 1.5%;
     }
 
-    .bubble-skirt {
+    .look-slide:nth-child(2) .bubble-skirt {
         top: 50%;
         right: 1.5%;
     }
 
-    .bubble-boot {
+    .look-slide:nth-child(2) .bubble-boot {
         bottom: 6%;
         right: 1.5%;
-    }
-
-    .bubble-boot-left {
-        bottom: 7%;
-        left: 1.5%;
     }
 }
