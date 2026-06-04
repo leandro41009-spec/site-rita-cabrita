@@ -1,469 +1,495 @@
-/* ==========================================
-   1. CONFIGURAÇÕES GERAIS E RESET
-   ========================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-body {
-    background-color: #0f0f0f;
-    color: #fff;
-    overflow-x: hidden;
-}
-a {
-    text-decoration: none;
 }
 
-/* ==========================================
-   2. NAVBAR (HEADER)
-   ========================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111111;
+    color: #ffffff;
+}
+
+/* HEADER */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    background-color: #1a1512; /* Fundo escuro fluido country/piseiro */
+    background: #1f1813;
+    border-bottom: 2px solid #b8862b;
+    padding: 14px 30px;
     position: sticky;
     top: 0;
-    z-index: 100;
-    border-bottom: 2px solid #d4af37; /* Linha dourada de acabamento */
+    z-index: 1000;
 }
+
+.navbar-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
 .logo-img {
-    height: 50px;
+    height: 58px;
     width: auto;
+    display: block;
 }
+
 .nav-links {
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 34px;
+    margin-left: 10px;
+    margin-right: auto;
 }
+
 .nav-links a {
-    color: #f5e6d3;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: 0.3s;
+    color: #f5ede3;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 700;
+    transition: color 0.2s ease;
 }
+
 .nav-links a:hover {
-    color: #1DB954; /* Destaque verde Spotify no menu */
+    color: #d4a63d;
 }
+
 .spotify-btn-header {
-    background-color: #1DB954;
-    color: white;
-    padding: 8px 18px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    transition: 0.3s;
+    background: #59c14d;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.25s ease;
+    box-shadow: 0 6px 18px rgba(89, 193, 77, 0.25);
+    white-space: nowrap;
 }
+
 .spotify-btn-header:hover {
-    background-color: #1ed760;
-}
-
-/* ==========================================
-   3. CAPA (HERO SECTION COM FOTO rita.jpg)
-   ========================================== */
-.hero-section {
-    position: relative;
-    height: 70vh;
-    background-image: url('rita.jpg'); /* Sua foto de fundo */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 20px;
-}
-.hero-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.65); /* Escurece a foto de fundo para destacar o texto */
-    z-index: 1;
-}
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-}
-.hero-content h1 {
-    font-size: 2.8rem;
-    color: #d4af37; /* Letras em dourado */
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-}
-.hero-content p {
-    font-size: 1.2rem;
-    color: #e0e0e0;
-    margin-bottom: 35px;
-}
-
-/* Botão Verde 3D Pulsando */
-.spotify-btn-pulsing {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: linear-gradient(180deg, #1ed760 0%, #1db954 100%);
-    color: white;
-    padding: 18px 35px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 50px;
-    box-shadow: 0 8px 0 #15803d, 0 12px 20px rgba(29, 185, 84, 0.4);
-    transition: 0.2s;
-    animation: pulse 1.5s infinite;
-}
-.spotify-btn-pulsing:active {
-    box-shadow: 0 2px 0 #15803d, 0 4px 10px rgba(29, 185, 84, 0.4);
-    transform: translateY(6px);
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.04); }
-    100% { transform: scale(1); }
-}
-
-/* ==========================================
-   4. SEÇÃO DO E-BOOK (CALL TO ACTION)
-   ========================================== */
-.ebook-section {
-    padding: 60px 5%;
-    background-color: #141414;
-}
-.ebook-container {
-    display: flex;
-    max-width: 1000px;
-    margin: 0 auto;
-    align-items: center;
-    gap: 50px;
-}
-.ebook-image {
-    flex: 1;
-    text-align: center;
-}
-.ebook-image img {
-    max-width: 320px;
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-}
-.ebook-text {
-    flex: 1;
-}
-.ebook-text h2 {
-    font-size: 2.2rem;
-    color: #fff;
-    margin-bottom: 20px;
-    border-left: 4px solid #d4af37;
-    padding-left: 15px;
-}
-.ebook-text p {
-    font-size: 1.1rem;
-    color: #aaa;
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-.btn-buy-ebook {
-    display: inline-block;
-    background-color: #f5a623;
-    color: #000;
-    padding: 15px 30px;
-    font-weight: bold;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(245, 166, 35, 0.3);
-    transition: 0.3s;
-}
-.btn-buy-ebook:hover {
-    background-color: #ffb842;
+    background: #49ae3f;
     transform: translateY(-2px);
 }
 
-/* ==========================================
-   5. SEÇÃO MÚSICAS (5 CAPAS)
-   ========================================== */
-.musicas-section {
-    padding: 60px 5%;
-    background-color: #0f0f0f;
-}
-.section-title {
-    text-align: center;
-    font-size: 2rem;
-    color: #d4af37;
-    margin-bottom: 40px;
-}
-.grid-musicas {
+/* HERO */
+.hero-section {
+    position: relative;
+    min-height: 90vh;
+    background: url('hero-bg.jpg') center center/cover no-repeat;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.card-musica {
-    background-color: #1a1a1a;
-    width: 200px;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    border: 1px solid #222;
-}
-.card-musica img {
-    width: 100%;
-    height: 170px;
-    object-fit: cover;
-    border-radius: 6px;
-    margin-bottom: 12px;
-}
-.card-musica h3 {
-    font-size: 1rem;
-    color: #fff;
-}
-.cta-musicas-container {
-    text-align: center;
-    margin-top: 45px;
-}
-.btn-ouca-agora {
-    display: inline-flex;
     align-items: center;
-    gap: 10px;
-    background-color: #1DB954;
-    color: white;
-    padding: 16px 40px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(29, 185, 84, 0.4);
-    transition: 0.3s;
-}
-.btn-ouca-agora:hover {
-    background-color: #1ed760;
-    transform: scale(1.05);
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
 }
 
-/* ==========================================
-   6. SEÇÃO ROUBE O LOOK
-   ========================================== */
-.looks-section {
-    padding: 60px 5%;
-    background-color: #fcf9f5; /* Tom bege claro idêntico à amostra */
-    color: #333;
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.58);
 }
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+}
+
+.hero-content h1 {
+    font-size: 64px;
+    line-height: 1.08;
+    color: #d8af44;
+    margin-bottom: 18px;
+    font-weight: 800;
+}
+
+.hero-content p {
+    font-size: 28px;
+    line-height: 1.5;
+    color: #f2f2f2;
+    margin-bottom: 28px;
+}
+
+.spotify-btn-pulsing {
+    display: inline-block;
+    background: linear-gradient(180deg, #6be35f 0%, #50c447 100%);
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 34px;
+    border-radius: 999px;
+    font-size: 20px;
+    font-weight: 800;
+    box-shadow: 0 10px 25px rgba(107, 227, 95, 0.35);
+}
+
+/* TÍTULOS GERAIS */
+.section-title {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 14px;
+    color: #d8af44;
+}
+
 .section-subtitle {
     text-align: center;
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 40px;
-    font-weight: 500;
+    font-size: 18px;
+    color: #dddddd;
+    margin-bottom: 30px;
 }
-.looks-container {
-    display: flex;
-    max-width: 1100px;
+
+/* EBOOK */
+.ebook-section {
+    background: #1a1a1a;
+    padding: 80px 20px;
+}
+
+.ebook-container {
+    max-width: 1180px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 360px 1fr;
     gap: 40px;
     align-items: center;
 }
 
-/* Lado esquerdo - Imagem Interativa com Botões */
-.look-interactive {
-    flex: 1;
-    position: relative;
-    text-align: center;
-}
-.rita-main-img {
-    max-width: 100%;
-    height: auto;
-    max-height: 550px;
+.ebook-image img {
+    width: 100%;
+    border-radius: 18px;
+    display: block;
 }
 
-/* Estilo das Tags Verdes "ORDER NOW" */
-.look-tag {
-    position: absolute;
-    background-color: #52b788; /* Verde da imagem de referência */
-    color: white;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    transition: 0.2s;
-}
-.look-tag:hover {
-    background-color: #409a71;
-    transform: scale(1.05);
+.ebook-text h2 {
+    font-size: 48px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.1;
 }
 
-/* Posicionamentos estratégicos simulando as setas */
-.tag-chapeu { top: 18%; left: 5%; }
-.tag-cropped { top: 25%; right: 5%; }
-.tag-shorts { top: 50%; left: 2%; }
-.tag-botas { top: 68%; right: 8%; }
+.ebook-text p {
+    font-size: 20px;
+    color: #d5d5d5;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
 
-/* Lado Direito - Grid de 4 Produtos */
-.looks-grid-produtos {
-    flex: 1.2;
+.btn-buy-ebook {
+    display: inline-block;
+    background: #d8af44;
+    color: #111;
+    text-decoration: none;
+    padding: 16px 28px;
+    border-radius: 999px;
+    font-weight: 800;
+}
+
+/* MÚSICAS */
+.musicas-section {
+    background: #111111;
+    padding: 80px 20px;
+}
+
+.grid-musicas {
+    max-width: 1200px;
+    margin: 40px auto 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-.produto-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    border: 1px solid #eaeaea;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.produto-card img {
-    width: 100%;
-    max-width: 160px;
-    height: 160px;
-    object-fit: contain;
-    margin-bottom: 15px;
-}
-.produto-links {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 22px;
 }
 
-/* Botões de Conversão da Amostra (Laranja e Preto) */
-.btn-shopee {
-    background-color: #e25c38; /* Laranja Oficial */
-    color: white;
+.card-musica {
+    background: #1b1b1b;
+    border-radius: 18px;
+    overflow: hidden;
     text-align: center;
-    padding: 10px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: 0.2s;
+    padding-bottom: 18px;
 }
-.btn-shopee:hover { background-color: #cc4f2e; }
 
-.btn-tiktok {
-    background-color: #000000; /* Preto TikTok Shop */
-    color: white;
+.card-musica img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-musica h3 {
+    font-size: 18px;
+    padding: 16px 12px 0;
+    color: #ffffff;
+}
+
+.cta-musicas-container {
     text-align: center;
-    padding: 10px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    border-radius: 6px;
-    border: 1px solid #222;
-    transition: 0.2s;
+    margin-top: 34px;
 }
-.btn-tiktok:hover { background-color: #222; }
 
-/* Lista inferior de texto */
-.looks-list-footer {
+.btn-ouca-agora {
+    display: inline-block;
+    background: #d8af44;
+    color: #111;
+    text-decoration: none;
+    padding: 16px 30px;
+    border-radius: 999px;
+    font-weight: 800;
+}
+
+/* LOOKS */
+.looks-section {
+    background: #181512;
+    padding: 80px 20px;
+}
+
+.look-novo-container {
     max-width: 1100px;
-    margin: 30px auto 0 auto;
-    padding-left: 20px;
-}
-.looks-list-footer p {
-    font-size: 1.05rem;
-    color: #444;
-    margin-bottom: 8px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-/* ==========================================
-   7. FOOTER (RODAPÉ)
-   ========================================== */
-.site-footer {
-    background-color: #1a1512; /* Mesmo fundo escuro do Header */
-    padding: 40px 5%;
-    border-top: 2px solid #d4af37; /* Mesma linha dourada */
-    color: #f5e6d3;
+.look-novo-imagem {
+    position: relative;
+    max-width: 900px;
+    margin: 30px auto 0;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
 }
+
+.look-novo-imagem img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.look-hotspot {
+    position: absolute;
+    text-decoration: none;
+    background: linear-gradient(180deg, #111 0%, #000 100%);
+    color: #f2c14e;
+    border: 2px solid rgba(242, 193, 78, 0.7);
+    padding: 14px 22px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    transition: all 0.25s ease;
+}
+
+.look-hotspot:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.4);
+}
+
+.hotspot-chapeu {
+    top: 12%;
+    right: 4%;
+}
+
+.hotspot-vestido {
+    top: 48%;
+    left: 4%;
+}
+
+.hotspot-bota {
+    bottom: 10%;
+    right: 3%;
+}
+
+.look-novo-mobile-links {
+    display: none;
+}
+
+.looks-disclaimer {
+    margin-top: 18px;
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* FOOTER */
+.site-footer {
+    background: #120f0d;
+    padding: 60px 20px 30px;
+    border-top: 1px solid rgba(216, 175, 68, 0.2);
+}
+
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
     gap: 30px;
-}
-.footer-logo {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.footer-logo p {
-    font-size: 0.85rem;
-    color: #aaa;
-    letter-spacing: 0.5px;
-}
-.footer-nav {
-    display: flex;
-    gap: 30px;
-}
-.footer-nav a {
-    color: #f5e6d3;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: 0.3s;
-}
-.footer-nav a:hover {
-    color: #1DB954;
-}
-.footer-socials {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 12px;
-}
-.social-icons {
-    display: flex;
-    gap: 15px;
-}
-.social-icon {
-    color: #f5e6d3;
-    font-size: 1.3rem;
-    transition: 0.3s;
-}
-.social-icon:hover {
-    color: #1DB954;
-    transform: translateY(-3px);
-}
-.copyright {
-    font-size: 0.8rem;
-    color: #888;
+    align-items: start;
 }
 
-/* ==========================================
-   8. RESPONSIVIDADE (MOBILE / CELULARES)
-   ========================================== */
+.footer-logo p {
+    margin-top: 14px;
+    color: #cfcfcf;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.footer-nav a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.social-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #1f1f1f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d8af44;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.copyright {
+    color: #bdbdbd;
+    font-size: 14px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 1000px) {
+    .ebook-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .grid-musicas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-nav {
+        align-items: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 14px 18px;
+    }
+
+    .navbar-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo-container {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-links {
+        margin: 0;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-content h1 {
+        font-size: 44px;
+    }
+
+    .hero-content p {
+        font-size: 22px;
+    }
+}
+
 @media (max-width: 768px) {
-    /* Navbar Mobile */
-    .navbar { flex-direction: column; gap: 15px; text-align: center; }
-    
-    /* Capa Mobile */
-    .hero-content h1 { font-size: 2rem; }
-    
-    /* Ebook Mobile */
-    .ebook-container { flex-direction: column; text-align: center; }
-    .ebook-text h2 { border-left: none; padding-left: 0; }
-    
-    /* Músicas Mobile */
-    .grid-musicas { gap: 15px; }
-    .card-musica { width: 45%; }
-    
-    /* Looks Mobile */
-    .looks-container { flex-direction: column; }
-    .looks-grid-produtos { grid-template-columns: 1fr; }
-    .look-tag { display: none; } /* Esconde as tags flutuantes para não quebrar a tela do celular */
-    
-    /* Footer Mobile */
-    .footer-container { flex-direction: column; text-align: center; }
-    .footer-logo { align-items: center; }
-    .footer-nav { flex-direction: column; gap: 15px; }
-    .footer-socials { align-items: center; }
+    .logo-img {
+        height: 48px;
+    }
+
+    .nav-links a {
+        font-size: 15px;
+    }
+
+    .spotify-btn-header {
+        width: 100%;
+        max-width: 260px;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .ebook-text h2 {
+        font-size: 34px;
+    }
+
+    .ebook-text p {
+        font-size: 18px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .spotify-btn-pulsing {
+        font-size: 16px;
+        padding: 16px 24px;
+    }
+
+    .grid-musicas {
+        grid-template-columns: 1fr;
+    }
+
+    .look-hotspot {
+        display: none;
+    }
+
+    .look-novo-mobile-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .look-novo-mobile-links a {
+        text-decoration: none;
+        background: #111;
+        color: #f2c14e;
+        padding: 14px 18px;
+        border-radius: 999px;
+        font-weight: 700;
+        border: 1px solid rgba(242, 193, 78, 0.45);
+    }
 }
