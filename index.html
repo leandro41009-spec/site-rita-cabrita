@@ -9,113 +9,23 @@
 </head>
 <body>
 
-.navbar {
-    background: #1f1813;
-    border-bottom: 2px solid #b8862b;
-    padding: 14px 30px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+    <header class="navbar">
+        <div class="navbar-inner">
+            <div class="logo-container">
+                <img src="logoritacabrita.png" alt="Rita Cabrita" class="logo-img">
+            </div>
 
-.navbar-inner {
-    max-width: 1240px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-}
+            <nav class="nav-links">
+                <a href="#musicas">Músicas</a>
+                <a href="#looks">Looks</a>
+                <a href="#ebook">E-book</a>
+            </nav>
 
-.logo-container {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.logo-img {
-    height: 54px;
-    width: auto;
-    display: block;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 34px;
-    margin-left: 10px;
-    margin-right: auto;
-}
-
-.nav-links a {
-    color: #f5ede3;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: 700;
-    transition: color 0.2s ease;
-}
-
-.nav-links a:hover {
-    color: #d4a63d;
-}
-
-.spotify-btn-header {
-    background: #59c14d;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 999px;
-    font-weight: 700;
-    font-size: 16px;
-    transition: all 0.25s ease;
-    box-shadow: 0 6px 18px rgba(89, 193, 77, 0.25);
-    white-space: nowrap;
-}
-
-.spotify-btn-header:hover {
-    background: #49ae3f;
-    transform: translateY(-2px);
-}
-
-@media (max-width: 900px) {
-    .navbar {
-        padding: 14px 18px;
-    }
-
-    .navbar-inner {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .logo-container {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .nav-links {
-        margin: 0;
-        gap: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-}
-
-@media (max-width: 600px) {
-    .logo-img {
-        height: 46px;
-    }
-
-    .nav-links a {
-        font-size: 15px;
-    }
-
-    .spotify-btn-header {
-        width: 100%;
-        max-width: 260px;
-        text-align: center;
-        font-size: 15px;
-    }
-}
+            <a href="#" target="_blank" rel="noopener noreferrer" class="spotify-btn-header">
+                Ouvir no Spotify
+            </a>
+        </div>
+    </header>
 
     <section class="hero-section">
         <div class="hero-overlay"></div>
@@ -210,9 +120,8 @@
 
     <footer class="site-footer">
         <div class="footer-container">
-            
             <div class="footer-logo">
-                <img src="logo.png" alt="Rita Cabrita" class="logo-img">
+                <img src="logoritacabrita.png" alt="Rita Cabrita" class="logo-img">
                 <p>O fenômeno do sertanejo & piseiro.</p>
             </div>
 
@@ -231,7 +140,6 @@
                 </div>
                 <p class="copyright">&copy; 2026 Rita Cabrita. Todos os direitos reservados.</p>
             </div>
-
         </div>
     </footer>
 
